@@ -7,9 +7,16 @@ import { GET_ADDED_PATIENTS } from "./constants/subgraphQueries"
 import { useQuery } from "@apollo/client"
 import PatientProfile from "./components/PatientProfile"
 import NotRegisteredPatient from "./components/NotRegisteredPatient"
+import { useState } from "react";
 
 export default function Np() {
 
+    // const [nme,setnme]=useState("");
+    // const [add,setadd]=useState("");
+    // const [hash,sethash]=useState("");
+    let nme =""
+    let add =""
+    let hash =""
     const { isWeb3Enabled, chainId: chainHexId, account } = useMoralis()
 
     const chainId = chainHexId ? parseInt(chainHexId).toString() : "31337"
@@ -31,8 +38,31 @@ export default function Np() {
         if (patientAddresses.includes(account)) {
             isRegistered = true
         }
-    }
 
+    }
+// console.log(addedPatients[addedPatients.length-1])
+let cnt =0
+    if(isRegistered)  
+    {
+        addedPatients.addedPatients.map((patient) => {
+            patientAddresses.push(patient.patientAddress)
+            if (patient.patientAddress === account && cnt === 0) {
+                const {
+                    name,
+                    patientAddress,
+                    diseaseHash,
+                    
+                } = patient
+               nme = name
+               add = patientAddress
+               hash = diseaseHash
+               cnt++
+               
+                
+            }
+
+        })
+    }                
   return (
     <div>
       <Head>
@@ -77,28 +107,44 @@ export default function Np() {
                                 />
                             </div>
                         ) : isRegistered ? (
-                            addedPatients.addedPatients.map((patient) => {
-                                patientAddresses.push(patient.patientAddress)
-                                if (patient.patientAddress === account) {
-                                    const {
-                                        name,
-                                        patientAddress,
-                                        diseaseHash,
+                            
+                            
+                            // addedPatients.addedPatients.map((patient) => {
+                            //     patientAddresses.push(patient.patientAddress)
+                            //     if (patient.patientAddress === account) {
+                            //         const {
+                            //             name,
+                            //             patientAddress,
+                            //             diseaseHash,
                                         
-                                    } = patient
-                                    return (
-                                        <div key={patientAddress}>
-                                        <PatientProfile
-                                        key={patientAddress}
-                                        name={name}
-                                        patientAddress={patientAddress}
-                                        diseaseHash={diseaseHash}
-                                    />
-                                        </div>
-                                    )
-                                }
-                            })
-                        ) : (
+                            //         } = patient
+                            //        nme = name
+                            //        add = patientAddress
+                            //        hash = diseaseHash
+                            //        return (
+                            //         <div key={add}>
+                            //     <PatientProfile
+                            //     key={add}
+                            //     name={nme}
+                            //     patientAddress={add}
+                            //     diseaseHash={hash}
+                            // />
+                            //     </div>
+                            //        )
+                                    
+                            //     }
+                    
+                            // })
+                            <div key={add}>
+                                <PatientProfile
+                                key={add}
+                                name={nme}
+                                patientAddress={add}
+                                diseaseHash={hash}
+                            />
+                                </div>
+                            )
+                         : (
                             <NotRegisteredPatient account={account} />
                         )
                     ) : (
