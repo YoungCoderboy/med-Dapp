@@ -30,21 +30,9 @@ function Article() {
   }, [Data]);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [ministryFilter, setMinistryFilter] = useState("All"); // Default to show all ministries
-  const [sentimentSort, setSentimentSort] = useState("All"); // Default to no sorting
 
-  // Apply filters based on search, ministry, and sentiment
-
-  // Calculate the total number of pages
   const totalPages = Math.ceil(2);
 
-  // Ensure currentPage is within a valid range
-  const validPage = Math.min(Math.max(currentPage, 1), totalPages);
-
-  // Calculate the index of the first and last items to display on the current page
-
-  // Function to handle page changes
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };

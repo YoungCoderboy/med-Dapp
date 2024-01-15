@@ -75,6 +75,7 @@ export default function Navbar() {
           </div>
           <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div class="flex flex-shrink-0 items-center">
+              <h4 class="text-white mt-2">Med-DApp</h4>
               <img
                 class="h-8 w-auto"
                 src="https://cdn.pixabay.com/photo/2017/02/15/20/58/ekg-2069872_1280.png"
