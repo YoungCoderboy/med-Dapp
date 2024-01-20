@@ -3,7 +3,7 @@ import { useMoralis } from "react-moralis";
 import { ConnectButton, Loading } from "web3uikit";
 import PatientWorkflow from "./components/PatientWorkflow";
 import networkMapping from "./constants/networkMapping.json";
-import { GET_ADDED_PATIENTS } from "./constants/subgraphQueries";
+import { GET_ADDED_PATIENTS } from "../constant/subgraphQueries";
 import { useQuery } from "@apollo/client";
 import PatientProfile from "./components/PatientProfile";
 import NotRegisteredPatient from "./components/NotRegisteredPatient";
