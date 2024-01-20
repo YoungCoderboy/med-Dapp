@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import logo from "./logo.png";
 
 import axios from "axios";
+import Loader from "./Loader";
 // Sample news data with 10 elements
 
 function Article() {
@@ -9,7 +10,7 @@ function Article() {
     "https://newsapi.org/v2/everything?q=healthcare&sortBy=publishedAt&apiKey=be87e6e7b44b49aeb4e67770508ac240";
 
   const [Data, setData] = useState([]);
-
+  const [loading, setLoading] = useState(true);
   const getFeeds = async () => {
     try {
       const response = await axios.get(url);
@@ -17,67 +18,29 @@ function Article() {
       setData(result.articles);
       Data.slice(20);
       console.log(Data);
+      setLoading(false);
     } catch (error) {
+      setLoading(true);
       console.error(error);
     }
   };
 
   useEffect(() => {
     getFeeds();
-  }, []);
+  }, [Data]);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [ministryFilter, setMinistryFilter] = useState("All"); // Default to show all ministries
-  const [sentimentSort, setSentimentSort] = useState("All"); // Default to no sorting
 
-  // Apply filters based on search, ministry, and sentiment
-
-  // Calculate the total number of pages
   const totalPages = Math.ceil(2);
 
-  // Ensure currentPage is within a valid range
-  const validPage = Math.min(Math.max(currentPage, 1), totalPages);
-
-  // Calculate the index of the first and last items to display on the current page
-
-  // Function to handle page changes
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
 
-  return (
+  return loading ? (
+    <Loader />
+  ) : (
     <div className="App bg-[#ffffff] pt-7">
-      <div className="mb-4 ml-8">
-        <input
-          type="text"
-          placeholder="Search news..."
-          className="px-2 py-1 border rounded"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        <select
-          className="ml-4 px-2 py-1 border rounded-3xl"
-          value={ministryFilter}
-          onChange={(e) => setMinistryFilter(e.target.value)}
-        >
-          <option value="All">All Ministries</option>
-          {/* Replace with actual ministries */}
-          <option value="Ministry of Health">Ministry of Health</option>
-          <option value="Ministry of Finance">Ministry of Finance</option>
-          {/* Add more ministries here */}
-        </select>
-        <select
-          className="ml-4 px-2 py-1 border rounded"
-          value={sentimentSort}
-          onChange={(e) => setSentimentSort(e.target.value)}
-        >
-          <option value="All">Filter by Sentiment</option>
-          <option value="Positive">Positive</option>
-          <option value="Neutral">Neutral</option>
-          <option value="Negative">Negative</option>
-        </select>
-      </div>
       {Data.map((news, id) => {
         return (
           <div
@@ -102,7 +65,7 @@ function Article() {
           </div>
         );
       })}
-      <div className="flex">
+      {/* <div className="flex">
         <div className="text-white mr-8  pt-4 ml-8 text-xl">
           <h2>Page no : </h2>
         </div>
@@ -121,7 +84,7 @@ function Article() {
             </button>
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -1,3 +1,3 @@
-export default function (IpfsHash){
-    return `https://ipfs.io/ipfs/${IpfsHash}`
+export default function (IpfsHash) {
+  return `https://ipfs.io/ipfs/${IpfsHash}`;
 }
