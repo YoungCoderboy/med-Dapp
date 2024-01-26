@@ -12,6 +12,7 @@ import {
   Loading,
 } from "web3uikit";
 import PatientMedicalRecordSystemAbi from "./constants/PatientMedicalRecordSystem.json";
+import Navbar from "./components/Navbar-doc";
 
 export default function Home() {
   const dispatch = useNotification();
@@ -135,12 +136,7 @@ export default function Home() {
 
   return (
     <div>
-      <Head>
-        <title>Pinata Next.js App</title>
-        <meta name="description" content="Generated with create-pinata-app" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/pinnie.png" />
-      </Head>
+      <Navbar />
       <main className="w-full min-h-screen m-auto flex flex-col justify-center items-center">
         <div className="py-4 px-3 font-bold text-4xl ml-12">
           Doctor's Uploader

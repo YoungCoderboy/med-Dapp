@@ -16,6 +16,7 @@ const Reminder = () => {
   const [time, setTime] = useState("12:00");
   const [date, setDate] = useState([]);
   const [medName, setMedName] = useState("");
+  const [num, setNum] = useState([]);
   async function fun(e) {
     const newArray = date.join(" ");
     // console.log(value);
@@ -68,10 +69,21 @@ const Reminder = () => {
     <>
       <Navbar2 />
       <div className="reminder-main">
+        <h1 className="mb-12 text-5xl">Enter your Reminder here : </h1>
+        <input
+          type="Phone"
+          id="nameNo"
+          placeholder="Enter Phone No. Here"
+          value={num}
+          onChange={(e) => {
+            setNum(e.target.value);
+          }}
+        />
         <input
           type="text"
           id="nameMed"
           value={medName}
+          placeholder="Enter Medicine Name Here"
           onChange={(e) => {
             setMedName(e.target.value);
           }}
