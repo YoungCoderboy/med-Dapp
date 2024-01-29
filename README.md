@@ -35,6 +35,10 @@ For more information about building apps with Pinata and IPFS, check out the fol
 - [Quick Start Recipes](https://docs.pinata.cloud/recipes)
 "# med-Dapp"
 
+## Web3 Flowchart
 ![Fchart](https://github.com/YoungCoderboy/med-Dapp/assets/91416534/9e4f36a5-654b-4966-9361-1f0f06d67626)
+
+## Disease Prediction Flowchart
+![image](https://github.com/YoungCoderboy/med-Dapp/assets/91416534/727c6bac-c006-4039-9119-1cbf9b66632b)
 
 
