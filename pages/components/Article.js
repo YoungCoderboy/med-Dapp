@@ -27,7 +27,7 @@ function Article() {
 
   useEffect(() => {
     getFeeds();
-  }, [Data]);
+  }, []);
 
   const [currentPage, setCurrentPage] = useState(1);
 
