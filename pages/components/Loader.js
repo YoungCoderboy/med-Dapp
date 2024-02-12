@@ -7,7 +7,7 @@ const Loader = () => {
   }, 10000);
   return (
     <>
-      <div class="section-center lds-roller">
+      <div className="section-center lds-roller">
         <div></div>
         <div></div>
         <div></div>

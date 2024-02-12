@@ -50,7 +50,7 @@ function Article() {
             <img
               src={news.urlToImage}
               alt={news.title}
-              className="w-60 h-52 border-4 border-white mr-8 rounded-3xl"
+              className="w-60 h-52 border-4 border-white mr-8 rounded-3xl bg-cover bg-center bg-no-repeat"
             />
             <div className="w-3/4">
               <h2 className="text-3xl font-semibold text-black mb-4">

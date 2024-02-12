@@ -33,19 +33,19 @@ const NewPage = () => {
 
   return (
     <div className="bg-[url('https://static.vecteezy.com/system/resources/previews/002/036/455/large_2x/medical-element-in-doodle-or-sketch-style-isolated-on-white-background-free-vector.jpg')] h-screen bg-no-repeat bg-cover">
-      <div class="flex justify-center mt-2 ">
-        <div class="flex flex-shrink-0 items-center mt-4 bg-white">
-          <h1 class="text-black mt-2">Med-DApp</h1>
+      <div className="flex justify-center mt-2 ">
+        <div className="flex flex-shrink-0 items-center mt-4 bg-white">
+          <h1 className="text-black mt-2">Med-DApp</h1>
           <img
-            class="h-20 w-20"
+            className="h-20 w-20"
             src="https://cdn.pixabay.com/photo/2017/02/15/20/58/ekg-2069872_1280.png"
             alt="Your Company"
           />
         </div>
       </div>
-      <div class="flex justify-center m-10">
+      <div className="flex justify-center m-10">
         <button
-          class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l text-lg"
+          className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l text-lg"
           type="submit"
           id="doc"
           onClick={() => {
@@ -55,7 +55,7 @@ const NewPage = () => {
           Doctor
         </button>
         <button
-          class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r text-lg"
+          className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r text-lg"
           type="submit"
           id="patient"
           onClick={() => {
@@ -66,23 +66,23 @@ const NewPage = () => {
         </button>
       </div>
       {sh ? (
-        <div class="flex justify-center  ">
+        <div className="flex justify-center  ">
           <form
             action="post"
-            class="w-full max-w-lg p-10 border-solid border-2 border-red-700 rounded-lg bg-white"
+            className="w-full max-w-lg p-10 border-solid border-2 border-red-700 rounded-lg bg-white"
           >
-            <div class="md:flex md:items-center mb-6 ">
-              <div class="md:w-1/3">
+            <div className="md:flex md:items-center mb-6 ">
+              <div className="md:w-1/3">
                 <label
-                  class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-5"
+                  className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-5"
                   for="inline-full-name"
                 >
                   Full Name :
                 </label>
               </div>
-              <div class="md:w-2/3">
+              <div className="md:w-2/3">
                 <input
-                  class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                  className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
                   id="inline-full-name"
                   type="name"
                   placeholder="Enter Name"
@@ -92,18 +92,18 @@ const NewPage = () => {
                 />
               </div>
             </div>
-            <div class="md:flex md:items-center mb-6">
-              <div class="md:w-1/3">
+            <div className="md:flex md:items-center mb-6">
+              <div className="md:w-1/3">
                 <label
-                  class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                  className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
                   for="inline-password"
                 >
                   Specialization :
                 </label>
               </div>
-              <div class="md:w-2/3">
+              <div className="md:w-2/3">
                 <input
-                  class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                  className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
                   id="inline-password"
                   type="text-area"
                   placeholder="Enter Specialization"
@@ -113,18 +113,18 @@ const NewPage = () => {
                 />
               </div>
             </div>
-            <div class="md:flex md:items-center mb-6">
-              <div class="md:w-1/3">
+            <div className="md:flex md:items-center mb-6">
+              <div className="md:w-1/3">
                 <label
-                  class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                  className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
                   for="inline-password"
                 >
                   Registration Id :
                 </label>
               </div>
-              <div class="md:w-2/3">
+              <div className="md:w-2/3">
                 <input
-                  class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                  className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
                   id="inline-password"
                   type="text-area"
                   placeholder="Enter Registration Id"
@@ -134,21 +134,21 @@ const NewPage = () => {
                 />
               </div>
             </div>
-            {/* <div class="md:flex md:items-center mb-6">
-              <div class="md:w-1/3"></div>
-              <label class="md:w-2/3 block text-gray-500 font-bold">
-                <input class="mr-2 leading-tight" type="checkbox" />
-                <span class="text-sm">Send me your newsletter!</span>
+            {/* <div className="md:flex md:items-center mb-6">
+              <div className="md:w-1/3"></div>
+              <label className="md:w-2/3 block text-gray-500 font-bold">
+                <input className="mr-2 leading-tight" type="checkbox" />
+                <span className="text-sm">Send me your newsletter!</span>
               </label>
 
             </div> */}
 
-            <div class="md:flex md:items-center flex justify-center">
-              <div class="md:w-1/3"></div>
-              <div class="md:w-2/3">
+            <div className="md:flex md:items-center flex justify-center">
+              <div className="md:w-1/3"></div>
+              <div className="md:w-2/3">
                 <Link legacyBehavior href="/doctor">
                   <button
-                    class="shadow bg-red-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                    className="shadow bg-red-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                     type="submit"
                     onClick={handleSubmit}
                   >
@@ -207,23 +207,23 @@ const NewPage = () => {
         //     </button>
         //   </Link>
         // </form>
-        <div class="flex justify-center ">
+        <div className="flex justify-center ">
           <form
             action="post"
-            class="w-full max-w-lg p-10 border-solid border-2 border-red-700 rounded-lg bg-white"
+            className="w-full max-w-lg p-10 border-solid border-2 border-red-700 rounded-lg bg-white"
           >
-            <div class="md:flex md:items-center mb-6">
-              <div class="md:w-1/3">
+            <div className="md:flex md:items-center mb-6">
+              <div className="md:w-1/3">
                 <label
-                  class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-5"
+                  className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-5"
                   for="inline-full-name"
                 >
                   Full Name :
                 </label>
               </div>
-              <div class="md:w-2/3">
+              <div className="md:w-2/3">
                 <input
-                  class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-red-500"
+                  className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-red-500"
                   id="inline-full-name"
                   type="name"
                   placeholder="Enter Name"
@@ -233,18 +233,18 @@ const NewPage = () => {
                 />
               </div>
             </div>
-            <div class="md:flex md:items-center mb-6">
-              <div class="md:w-1/3">
+            <div className="md:flex md:items-center mb-6">
+              <div className="md:w-1/3">
                 <label
-                  class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                  className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
                   for="inline-password"
                 >
                   DOB :
                 </label>
               </div>
-              <div class="md:w-2/3">
+              <div className="md:w-2/3">
                 <input
-                  class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                  className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
                   id="inline-password"
                   type="date"
                   placeholder="Enter Date of Birth"
@@ -257,8 +257,8 @@ const NewPage = () => {
             <div>
               <h2 className="text-lg  text-gray-500">Enter Blood Group :</h2>
             </div>
-            <div class="flex justify-center">
-              <select class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+            <div className="flex justify-center">
+              <select className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
                 <option value="ap">A+</option>
                 <option value="bp">B+</option>
                 <option value="op">O+</option>
@@ -266,9 +266,9 @@ const NewPage = () => {
                 <option value="bn">B-</option>
                 <option value="on">O-</option>
               </select>
-              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                 <svg
-                  class="fill-current h-4 w-4"
+                  className="fill-current h-4 w-4"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                 >
@@ -276,12 +276,12 @@ const NewPage = () => {
                 </svg>
               </div>
             </div>
-            <div class="mt-10 md:flex md:items-center">
-              <div class="md:w-1/3"></div>
-              <div class="md:w-2/3">
+            <div className="mt-10 md:flex md:items-center">
+              <div className="md:w-1/3"></div>
+              <div className="md:w-2/3">
                 <Link legacyBehavior href="/patient">
                   <button
-                    class="shadow bg-red-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                    className="shadow bg-red-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                     type="submit"
                     onClick={handleSubmit}
                   >
