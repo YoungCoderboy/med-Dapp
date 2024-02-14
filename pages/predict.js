@@ -1,7 +1,7 @@
 import search_animal from "./components/search";
 import axios from "axios";
 import { createRef, useRef, useState } from "react";
-import sympthons from "./components/sympthons";
+import sympthons from "../constant/sympthons";
 import FinalPredict from "./components/FinalPredict";
 
 import Loader from "./components/Loader";
@@ -38,7 +38,7 @@ const Prediction = () => {
         setTimeout(() => {
           setPred(false);
           isLoading(false);
-        }, 60000);
+        }, 30000);
         console.log("Done");
       } else {
         console.error("Something went wrong!!");
@@ -68,7 +68,7 @@ const Prediction = () => {
                 onKeyUp={() => search_animal()}
                 type="text"
                 name="search"
-                placeholder="Search animals.."
+                placeholder="Search Symptom.."
               />
               <div className="selectedItems">
                 {values.map((element, id) => {

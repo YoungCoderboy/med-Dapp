@@ -7,7 +7,7 @@ import Loader from "./Loader";
 
 function Article() {
   const url =
-    "https://newsapi.org/v2/everything?q=healthcare&sortBy=publishedAt&apiKey=be87e6e7b44b49aeb4e67770508ac240";
+    "https://newsapi.org/v2/everything?language=en&q=medical&sortBy=publishedAt&apiKey=be87e6e7b44b49aeb4e67770508ac240";
 
   const [Data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -27,7 +27,7 @@ function Article() {
 
   useEffect(() => {
     getFeeds();
-  }, [Data]);
+  }, []);
 
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -50,17 +50,22 @@ function Article() {
             <img
               src={news.urlToImage}
               alt={news.title}
-              className="w-60 h-52 border-4 border-white mr-8 rounded-3xl"
+              className="w-60 h-52 border-4 border-white mr-8 rounded-3xl bg-cover bg-center bg-no-repeat"
             />
             <div className="w-3/4">
               <h2 className="text-3xl font-semibold text-black mb-4">
-                {news.title}
+                <a href={news.url} target="blank">
+                  {" "}
+                  {news.title}
+                </a>
               </h2>
               {/* <p className="text-white text-l mb-2">{news.summary}</p>
               <p className="text-white text-xl mb-2">
                 Ministry: {news.ministry}
               </p> */}
-              <p className="text-black text-xl mb-2">Content: {news.content}</p>
+              <p className="text-black text-xl mb-2">
+                Content: {news.content.substr(0, 200)}
+              </p>
             </div>
           </div>
         );
